@@ -92,6 +92,7 @@ endmodule
 ![image](https://github.com/arshatha-palanivel/Exp-7-Synchornous-counters-/assets/118682484/acc68fbb-7564-4222-8eb3-482ec9a921e2)
 
 ### DOWN COUNTER
+![image](https://github.com/arshatha-palanivel/Exp-7-Synchornous-counters-/assets/118682484/a4b3d581-348b-45d7-9d5b-4b8313d08e93)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
