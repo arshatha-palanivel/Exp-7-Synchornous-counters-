@@ -71,52 +71,54 @@ Developed by: Arshatha.P
 RegisterNumber:  212222230012
  
 ### UP COUNTER
-```
-module sync(clk,A);
-input clk;
-output reg [0:2]A;
-always@(posedge clk)
+```py
+module uc(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up; 
+always@(posedge clk or posedge reset) 
 begin
-    A[0]=(((A[1])&(A[2]))^A[0]);
-	 A[1]=(A[2])^(A[1]);
-	 A[2]=1^A[2];
-end 
+if(reset) counter_up<=4'd0;
+else 
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up; 
 endmodule
 ```
 ### DOWN COUNTER
-```
-module exp6a(clk,A);
-input clk;
-output reg [0:2]A;
-always@(posedge clk)
+```py
+module down(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
 begin
-    A[0]=(((~A[1])&(~A[2]))^(A[0]));
-	 A[1]=(~A[2])^(A[1]);
-	 A[2]=1^A[2];
-end 
-endmodule 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+
 ```
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER 
 ### UP COUNTER
-![](./01.png)
+![](./001.png)
 
 ### DOWN COUNTER
-![](./02.png)
+![](./002.png)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 ### UP COUNTER
-![](./03.png)
+![](./003.png)
 
 ### DOWN COUNTER
-![](./04.png)
+![](./004.png)
 
 ### TRUTH TABLE 
 ### UP COUNTER
-![](./05.jpg)
+![](./005.jpg)
 
 ### DOWN COUNTER
-![](./06.jpg)
+![](./006.jpg)
 
 ### RESULTS 
 Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
